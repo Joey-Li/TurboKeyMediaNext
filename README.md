@@ -4,4 +4,4 @@ TurboKey will pass Media_Next to AUDIO_SERVICE of system when clicking TurboKey.
 
 TurboKey : KeyEvent is 702
 
-！[image](https://github.com/Joey-Li/TurboKeyMediaNext/blob/master/Screenshot_20190124_140532_com.android.settings.jpg)
+！[](https://github.com/Joey-Li/TurboKeyMediaNext/blob/master/Screenshot_20190124_140532_com.android.settings.jpg)
