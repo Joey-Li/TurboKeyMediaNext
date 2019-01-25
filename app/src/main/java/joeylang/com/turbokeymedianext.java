@@ -29,14 +29,17 @@ public class turbokeymedianext extends AccessibilityService {
 
             switch (key) {
                 case 702:  //Note 10, Turbo Key Code
-                    //Log.i(TAG, "ACTION_UP onKeyEvent " + key + " Start");
-                    if (mAudioManager == null) mAudioManager = (AudioManager)getSystemService(AUDIO_SERVICE);
-                    //Intent upIntent = new Intent(Intent.ACTION_MEDIA_BUTTON, null);
-                    KeyEvent upEvent = new KeyEvent(eventtime, eventtime, KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MEDIA_NEXT, 0);
-                    //upIntent.putExtra(Intent.EXTRA_KEY_EVENT, upEvent);
-                    //sendOrderedBroadcast(upIntent, null);
-                    mAudioManager.dispatchMediaKeyEvent(upEvent);
-                    //Log.i(TAG, "ACTION_UP onKeyEvent " + key + " End");
+
+//                    Log.d(TAG, "ACTION_UP onKeyEvent " + key + " Start");
+                    AudioManager mAudioManager = (AudioManager)getSystemService(AUDIO_SERVICE);
+
+                    if(mAudioManager.isMusicActive()) {
+                        KeyEvent upEvent = new KeyEvent(eventtime, eventtime, KeyEvent.ACTION_UP, KeyEvent.KEYCODE_MEDIA_NEXT, 0);
+
+                        mAudioManager.dispatchMediaKeyEvent(upEvent);
+//                        Log.d(TAG, "MusicActive");
+                    }
+//                    Log.d(TAG, "ACTION_UP onKeyEvent " + key + " End");
 
                     break;
                 default:
@@ -46,14 +49,15 @@ public class turbokeymedianext extends AccessibilityService {
         {
             switch (key) {
                 case 702:  //Note 10, Turbo Key Code
-                    //Log.i(TAG, " ACTION_DOWN onKeyEvent " + key + " Start");
-                    if (mAudioManager == null) mAudioManager = (AudioManager)getSystemService(AUDIO_SERVICE);
-                    //Intent downIntent = new Intent(Intent.ACTION_MEDIA_BUTTON, null);
-                    KeyEvent downEvent = new KeyEvent(eventtime, eventtime, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_NEXT, 0);
-                    //downIntent.putExtra(Intent.EXTRA_KEY_EVENT, downEvent);
-                    //sendOrderedBroadcast(downIntent, null);
-                    mAudioManager.dispatchMediaKeyEvent(downEvent);
-                    //Log.i(TAG, "ACTION_DOWN onKeyEvent " + key + " End");
+//                    Log.d(TAG, " ACTION_DOWN onKeyEvent " + key + " Start");
+                    AudioManager mAudioManager = (AudioManager)getSystemService(AUDIO_SERVICE);
+
+                    if(mAudioManager.isMusicActive()) {
+                        KeyEvent downEvent = new KeyEvent(eventtime, eventtime, KeyEvent.ACTION_DOWN, KeyEvent.KEYCODE_MEDIA_NEXT, 0);
+                        mAudioManager.dispatchMediaKeyEvent(downEvent);
+//                        Log.d(TAG, "MusicActive");
+                    }
+//                    Log.d(TAG, "ACTION_DOWN onKeyEvent " + key + " End");
 
                     break;
                 default:
