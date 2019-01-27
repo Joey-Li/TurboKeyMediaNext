@@ -6,7 +6,7 @@ TurboKey : KeyEvent is 702
 
 Keep Sevice always running : 
 
-``settings put secure enabled_accessibility_services joeylang.com.turbokeymedianext/.turbokeymedianext
-settings put secure accessibility_enabled 1``
+``settings put secure enabled_accessibility_services joeylang.com.turbokeymedianext/.turbokeymedianext``
+``settings put secure accessibility_enabled 1``
 
 ![](https://github.com/Joey-Li/TurboKeyMediaNext/blob/master/Screenshot_20190124_140532_com.android.settings.jpg)
