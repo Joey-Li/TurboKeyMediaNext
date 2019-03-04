@@ -5,6 +5,7 @@ TurboKey will pass Media_Next to AUDIO_SERVICE of system when clicking TurboKey.
 TurboKey : KeyEvent is 702
 
 Keep Sevice always running : 
+Setting->電池價化->把TurboKeyMediaNext設定為不允許
 
 ``settings put secure enabled_accessibility_services joeylang.com.turbokeymedianext/.turbokeymedianext``
 ``settings put secure accessibility_enabled 1``
