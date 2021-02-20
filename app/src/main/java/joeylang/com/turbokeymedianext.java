@@ -2,6 +2,9 @@ package joeylang.com.turbokeymedianext;
 
 import android.accessibilityservice.AccessibilityService;
 //import android.content.Intent;
+import android.content.ComponentName;
+import android.content.Context;
+import android.content.pm.PackageManager;
 import android.media.AudioManager;
 import android.os.PowerManager;
 import android.os.SystemClock;
@@ -148,7 +151,12 @@ public class turbokeymedianext extends AccessibilityService {
         //PowerManager powerManager = (PowerManager) getSystemService(POWER_SERVICE);
         //mWakeLock = powerManager.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK,"MyWakelockTag");
         //((PowerManager.WakeLock) mWakeLock).acquire();
-
+        PackageManager packageManager = getPackageManager();
+        ComponentName componentName = new ComponentName("joeylang.com", "turbokeymedianext");
+        packageManager.setComponentEnabledSetting(componentName,
+                PackageManager.COMPONENT_ENABLED_STATE_ENABLED,
+                PackageManager.DONT_KILL_APP
+        );
         super.onCreate();
     }
 
